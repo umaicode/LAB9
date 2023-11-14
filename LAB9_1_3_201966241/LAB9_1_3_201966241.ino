@@ -3,9 +3,21 @@
 Servo myServo;
 int servoPin = 11;
 
+unsigned long time_previous, time_current;
+
+int interval = 10;
+int angle = 0;
+int angle_step = 1;
+
 void setup() {
   // put your setup code here, to run once:
   myServo.attach(servoPin); // 서브 모터 연결
+  Serial.begin(9600);
+
+  myServo.write(angle);
+  delay(100);
+
+  time_previous = millis();
 }
 
 void loop() {
