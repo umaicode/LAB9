@@ -1,6 +1,13 @@
+int Enable1 = 38;
+int PWM1 = 9;
+int DIR1 = 39;
+
 void setup() {
   // put your setup code here, to run once:
-
+  pinMode(Enable1, OUTPUT);
+  digitalWrite(Enable1, LOW); 
+  pinMode(PWM1, OUTPUT);
+  pinMode(DIR1, OUTPUT);
 }
 
 void loop() {
