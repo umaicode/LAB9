@@ -1,6 +1,22 @@
+int Enable1 = 38;
+int PWM1 = 9;
+int DIR1 = 39;
+
+int button_pin = 14;
+boolean direction = true;
+
 void setup() {
   // put your setup code here, to run once:
+  pinMode(Enable1, OUTPUT);
+  pinMode(PWM1, OUTPUT);
+  pinMode(DIR1, OUTPUT);
 
+  digitalWrite(Enable1, HIGH);
+  digitalWrite(DIR1, direction);
+  digitalWrite(PWM1, !direction);
+
+  pinMode(button_pin, INPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
