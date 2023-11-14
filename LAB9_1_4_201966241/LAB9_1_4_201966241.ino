@@ -3,9 +3,13 @@
 Servo myServo;
 int servoPin = 11;
 
+String buffer = "";
+boolean process_it = false;
+
 void setup() {
   // put your setup code here, to run once:
   myServo.attach(servoPin); // 서브 모터 연결
+  Serial.begin(9600);
 }
 
 void loop() {
